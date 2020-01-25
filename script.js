@@ -61,11 +61,14 @@ $(document).ready(function() {
     $("#answerC").text(answerC[i]);
     $("#answerD").text(answerD[i]);
 
+    let countCorrect = 0;
     
     $(".btn").on("click", function() {
-        console.log(`Correct Answer: ${correctAnswers[i]}`);
-        var selectedAnswer = $(this).attr("data-value");
-        console.log(`Selected Answer: ${selectedAnswer}`);
+        let correctAnswer = correctAnswers[i];
+        let selectedAnswer = $(this).attr("data-value");
+        if (selectedAnswer == correctAnswer){
+            countCorrect++
+        }
         i++;
         $("#question").text(questions[i]);
         $("#answerA").text(answerA[i]);
