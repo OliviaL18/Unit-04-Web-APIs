@@ -45,7 +45,15 @@ $(document).ready(function() {
         "", //6
     ];
 
-    i = 0;
+    let i = 0;
+
+    /*for (i=0; i<questions.length; i++){
+
+    }*/
 
     $("#question").text(questions[i]);
+    $("#answerA").text(answerA[i]);
+    $("#answerB").text(answerB[i]);
+    $("#answerC").text(answerC[i]);
+    $("#answerD").text(answerD[i]);
 })
