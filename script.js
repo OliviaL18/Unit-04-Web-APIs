@@ -1,12 +1,12 @@
 $(document).ready(function() {
 
     var questions = [
-        "What is the correct syntax for referring to an external script?", //1
-        "How do you create a function in JavaScript?", //2
-        "How do you write an IF statement in Javascript?", //3
-        "How do you write a Javascript array?", //4
-        "Math.random() returns a random number in what range?", //5
-        "Which event occurs when the user clicks on an HTML element?", //6
+        "1. What is the correct syntax for referring to an external script?", //1
+        "2. How do you create a function in JavaScript?", //2
+        "3. How do you write an IF statement in Javascript?", //3
+        "4. How do you write a Javascript array?", //4
+        "5. Math.random() returns a random number in what range?", //5
+        "6. Which event occurs when the user clicks on an HTML element?", //6
     ];
 
     var answerA = [
@@ -45,6 +45,15 @@ $(document).ready(function() {
         "onselect", //6
     ];
 
+    var correctAnswers = [
+        "B", //1
+        "A", //2
+        "C", //3
+        "D", //4
+        "C", //5
+        "A", //6
+    ];
+
     let i = 0;
     $("#question").text(questions[i]);
     $("#answerA").text(answerA[i]);
@@ -54,6 +63,7 @@ $(document).ready(function() {
 
     
     $(".btn").on("click", function() {
+        console.log(`Correct Answer: ${correctAnswers[i]}`);
         i++;
         $("#question").text(questions[i]);
         $("#answerA").text(answerA[i]);
