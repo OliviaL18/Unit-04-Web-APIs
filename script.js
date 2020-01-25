@@ -44,4 +44,8 @@ $(document).ready(function() {
         "", //5
         "", //6
     ];
-}
+
+    i = 0;
+
+    $("#question").text(questions[i]);
+})
