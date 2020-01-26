@@ -77,4 +77,13 @@ $(document).ready(function() {
         $("#answerD").text(answerD[i]);
     })
 
+    let countdown = 75;
+
+    $(".start").on("click", function() {
+        $("#timer").text(countdown);
+        setInterval(function () {
+            countdown --;
+            $("#timer").text(countdown);
+        }, 1000); 
+    })
 })
