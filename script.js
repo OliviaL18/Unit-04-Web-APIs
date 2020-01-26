@@ -56,7 +56,7 @@ $(document).ready(function() {
 
     let i = 0;
 
-    let countdown = 15;
+    let countdown = 85;
     let timer;
 
     var highScores = document.querySelector(".highScores");
