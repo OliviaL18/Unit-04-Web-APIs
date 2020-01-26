@@ -114,7 +114,9 @@ $(document).ready(function() {
     $(".saveScore").on("click", function() {
         $(".score").addClass("d-none");
         $(".scoreboard").removeClass("d-none");
-        $(".highScores").append($("<p>").text($("#name").val() + ": " + countdown));
+        $(".highScores").append($("<p>").text($("#name").val() + ": " + countdown).addClass("highScoreLog"));
+        var scoreLog = $(".highScoreLog").text();
+        localStorage.setItem("scoreLog", scoreLog);
     });
 
 })
