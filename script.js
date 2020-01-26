@@ -59,6 +59,8 @@ $(document).ready(function() {
     let countdown = 15;
     let timer;
 
+    var highScores = document.querySelector(".highScores");
+
     function endQuiz(){
         $(".quiz").addClass("d-none");
         stopTimer();
@@ -83,6 +85,11 @@ $(document).ready(function() {
     function stopTimer(){
         clearInterval(timer);
     };
+
+    function displayScoreLog(){
+        var storedScores = localStorage.getItem("scoreLog");
+        highScores.textContent = storedScores;
+    }
 
     $(".start").on("click", function() {
         $(".start").hide();
@@ -117,6 +124,7 @@ $(document).ready(function() {
         $(".highScores").append($("<p>").text($("#name").val() + ": " + countdown).addClass("highScoreLog"));
         var scoreLog = $(".highScoreLog").text();
         localStorage.setItem("scoreLog", scoreLog);
+        displayScoreLog();
     });
 
 })
