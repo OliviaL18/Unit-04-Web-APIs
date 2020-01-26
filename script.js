@@ -55,11 +55,6 @@ $(document).ready(function() {
     ];
 
     let i = 0;
-    $("#question").text(questions[i]);
-    $("#answerA").text(answerA[i]);
-    $("#answerB").text(answerB[i]);
-    $("#answerC").text(answerC[i]);
-    $("#answerD").text(answerD[i]);
 
     let countCorrect = 0;
     
@@ -81,6 +76,7 @@ $(document).ready(function() {
 
     $(".start").on("click", function() {
         $(".start").hide();
+        $(".quiz").removeClass("d-none");
         $("#timer").text(`Timer: ${countdown}`);
             setInterval(function () {
                 if (countdown > 0) {
