@@ -62,7 +62,6 @@ $(document).ready(function() {
 
     let countdown = 85;
     let timer;
-
     
     $(".btn").on("click", function() {
         let correctAnswer = correctAnswers[i];
@@ -82,6 +81,8 @@ $(document).ready(function() {
         } else {
             $(".quiz").addClass("d-none");
             stopTimer();
+            let finalScore = countdown;
+            console.log(finalScore);
         }
 
     })
