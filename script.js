@@ -82,7 +82,8 @@ $(document).ready(function() {
             $(".quiz").addClass("d-none");
             stopTimer();
             let finalScore = countdown;
-            console.log(finalScore);
+            $(".score").removeClass("d-none");
+            $("#finalScore").text(`Final Score: ${finalScore}`);
         }
 
     })
