@@ -60,8 +60,10 @@ $(document).ready(function() {
 
     let i = 0;
 
-    let countdown = 75;
+    let countdown = 85;
+    let timer;
     let reduce = 10;
+
     
     $(".btn").on("click", function() {
         let correctAnswer = correctAnswers[i];
@@ -80,20 +82,31 @@ $(document).ready(function() {
             $("#answerD").text(answerD[i]);
         } else {
             $(".quiz").addClass("d-none");
+            stopTimer();
         }
 
     })
+
+    function reduceTimer(){
+        if (countdown > 0) {
+            countdown--;
+            $("#timer").text(`Timer: ${countdown}`);
+        } 
+    };
+
+    function startTimer(){
+        timer = setInterval(reduceTimer, 1000);
+    }
+
+    function stopTimer(){
+        clearInterval(timer);
+    }
 
     $(".start").on("click", function() {
         $(".start").hide();
         $(".quiz").removeClass("d-none");
         $("#timer").text(`Timer: ${countdown}`);
-            setInterval(function () {
-                if (countdown > 0) {
-                    countdown--;
-                    $("#timer").text(`Timer: ${countdown}`);
-                }
-            }, 1000);
+        startTimer();
     })
 
 })
