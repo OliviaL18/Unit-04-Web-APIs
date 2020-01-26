@@ -127,4 +127,8 @@ $(document).ready(function() {
         displayScoreLog();
     });
 
+    $("#restart").on("click", function(){
+        window.location.reload();
+    });
+
 })
