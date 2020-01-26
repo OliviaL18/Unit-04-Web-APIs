@@ -112,7 +112,8 @@ $(document).ready(function() {
     });
 
     $(".saveScore").on("click", function() {
-        console.log("save score");
+        $(".score").addClass("d-none");
+        $(".scoreboard").removeClass("d-none");
     });
 
 })
