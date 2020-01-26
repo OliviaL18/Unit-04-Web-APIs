@@ -7,10 +7,6 @@ $(document).ready(function() {
         "4. How do you write a Javascript array?", //4
         "5. Math.random() returns a random number in what range?", //5
         "6. Which event occurs when the user clicks on an HTML element?", //6
-        "", //7
-        "", //8
-        "", //9
-        "", //10
     ];
 
     var answerA = [
@@ -86,7 +82,7 @@ $(document).ready(function() {
             $("#finalScore").text(`Final Score: ${finalScore}`);
         }
 
-    })
+    });
 
     function reduceTimer(){
         if (countdown > 0) {
@@ -97,11 +93,11 @@ $(document).ready(function() {
 
     function startTimer(){
         timer = setInterval(reduceTimer, 1000);
-    }
+    };
 
     function stopTimer(){
         clearInterval(timer);
-    }
+    };
 
     $(".start").on("click", function() {
         $(".start").hide();
