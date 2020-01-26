@@ -111,4 +111,8 @@ $(document).ready(function() {
         }
     });
 
+    $(".saveScore").on("click", function() {
+        console.log("save score");
+    });
+
 })
