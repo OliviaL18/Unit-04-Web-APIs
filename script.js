@@ -114,6 +114,7 @@ $(document).ready(function() {
     $(".saveScore").on("click", function() {
         $(".score").addClass("d-none");
         $(".scoreboard").removeClass("d-none");
+        $(".highScores").append($("<p>").text($("#name").val() + ": " + countdown));
     });
 
 })
