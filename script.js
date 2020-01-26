@@ -56,13 +56,16 @@ $(document).ready(function() {
 
     let i = 0;
 
-    let countCorrect = 0;
+    let countdown = 75;
+    let reduce = 10;
     
     $(".btn").on("click", function() {
         let correctAnswer = correctAnswers[i];
         let selectedAnswer = $(this).attr("data-value");
-        if (selectedAnswer == correctAnswer){
-            countCorrect++
+        if (selectedAnswer != correctAnswer){
+            let newTime = countdown - reduce;
+            countdown = newTime;
+            $("#timer").text(`Timer: ${countdown}`);
         }
         i++;
         $("#question").text(questions[i]);
@@ -71,8 +74,6 @@ $(document).ready(function() {
         $("#answerC").text(answerC[i]);
         $("#answerD").text(answerD[i]);
     })
-
-    let countdown = 10;
 
     $(".start").on("click", function() {
         $(".start").hide();
@@ -85,4 +86,5 @@ $(document).ready(function() {
                 }
             }, 1000);
     })
+
 })
