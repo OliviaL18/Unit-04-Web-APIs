@@ -62,14 +62,13 @@ $(document).ready(function() {
 
     let countdown = 85;
     let timer;
-    let reduce = 10;
 
     
     $(".btn").on("click", function() {
         let correctAnswer = correctAnswers[i];
         let selectedAnswer = $(this).attr("data-value");
         if (selectedAnswer != correctAnswer){
-            let newTime = countdown - reduce;
+            let newTime = countdown - 10;
             countdown = newTime;
             $("#timer").text(`Timer: ${countdown}`);
         }
