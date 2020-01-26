@@ -56,9 +56,41 @@ $(document).ready(function() {
 
     let i = 0;
 
-    let countdown = 85;
+    let countdown = 15;
     let timer;
+
+    function endQuiz(){
+        $(".quiz").addClass("d-none");
+        stopTimer();
+        let finalScore = countdown;
+        $(".score").removeClass("d-none");
+        $("#finalScore").text(`Final Score: ${finalScore}`);
+    }
+
+    function startTimer(){
+        timer = setInterval(reduceTimer, 1000);
+    };
     
+    function reduceTimer(){
+        if (countdown > 0) {
+            countdown--;
+            $("#timer").text(`Timer: ${countdown}`);
+        } else {
+            endQuiz();
+        }
+    };
+
+    function stopTimer(){
+        clearInterval(timer);
+    };
+
+    $(".start").on("click", function() {
+        $(".start").hide();
+        $(".quiz").removeClass("d-none");
+        $("#timer").text(`Timer: ${countdown}`);
+        startTimer();
+    })
+
     $(".quizBtn").on("click", function() {
         let correctAnswer = correctAnswers[i];
         let selectedAnswer = $(this).attr("data-value");
@@ -75,35 +107,8 @@ $(document).ready(function() {
             $("#answerC").text(answerC[i]);
             $("#answerD").text(answerD[i]);
         } else {
-            $(".quiz").addClass("d-none");
-            stopTimer();
-            let finalScore = countdown;
-            $(".score").removeClass("d-none");
-            $("#finalScore").text(`Final Score: ${finalScore}`);
+            endQuiz();
         }
-
     });
-
-    function reduceTimer(){
-        if (countdown > 0) {
-            countdown--;
-            $("#timer").text(`Timer: ${countdown}`);
-        } 
-    };
-
-    function startTimer(){
-        timer = setInterval(reduceTimer, 1000);
-    };
-
-    function stopTimer(){
-        clearInterval(timer);
-    };
-
-    $(".start").on("click", function() {
-        $(".start").hide();
-        $(".quiz").removeClass("d-none");
-        $("#timer").text(`Timer: ${countdown}`);
-        startTimer();
-    })
 
 })
