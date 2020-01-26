@@ -5,10 +5,3 @@
 .jumbotron {
     padding: 15px;
 }
-
-.card-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-  }
