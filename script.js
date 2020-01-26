@@ -63,7 +63,7 @@ $(document).ready(function() {
     let countdown = 85;
     let timer;
     
-    $(".btn").on("click", function() {
+    $(".quizBtn").on("click", function() {
         let correctAnswer = correctAnswers[i];
         let selectedAnswer = $(this).attr("data-value");
         if (selectedAnswer != correctAnswer){
